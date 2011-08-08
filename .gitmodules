@@ -1,0 +1,24 @@
+[submodule "system"]
+	path = system
+	url = http://github.com/kohana/core.git
+[submodule "modules/database"]
+	path = modules/database
+	url = http://github.com/kohana/database.git
+[submodule "modules/orm"]
+	path = modules/orm
+	url = http://github.com/kohana/orm.git
+[submodule "modules/cache"]
+	path = modules/cache
+	url = http://github.com/kohana/cache.git
+[submodule "modules/kostache"]
+	path = modules/kostache
+	url = http://github.com/zombor/KOstache.git
+[submodule "modules/minion"]
+	path = modules/minion
+	url = http://github.com/kohana-minion/core.git
+[submodule "modules/minion-tasks-cache"]
+	path = modules/minion-tasks-cache
+	url = http://github.com/kohana-minion/tasks-cache.git
+[submodule "modules/minion-tasks-migrations"]
+	path = modules/minion-tasks-migrations
+	url = http://github.com/kohana-minion/tasks-migrations.git
