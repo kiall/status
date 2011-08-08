@@ -6,7 +6,6 @@
  * @author     Kiall Mac Innes
  * @copyright  (c) 2011 Kiall Mac Innes
  */
-
 class Model_Service extends ORM {
 
 	/**
@@ -58,5 +57,21 @@ class Model_Service extends ORM {
 				array('max_length', array(':value', 255)),
 			),
 		);
+	}
+
+	public function latest_event()
+	{
+		return $this->events->order_by('timestamp', 'DESC')->find();
+	}
+
+	public function __get($column)
+	{
+		switch ($column)
+		{
+			case 'latest_event':
+				return $this->latest_event();
+			default:
+				return parent::__get($column);
+		}
 	}
 }
