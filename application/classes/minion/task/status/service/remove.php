@@ -12,17 +12,17 @@ class Minion_Task_Status_Service_Remove extends Minion_Task
 	/**
 	 * An array of config options that this task can accept
 	 */
-	protected $_config = array('id');
+	protected $_config = array('name');
 
 	public function execute(array $config)
 	{
 		$service = ORM::factory('service', array(
-			'id' => $config['id'],
+			'name' => $config['name'],
 		));
 
 		if ( ! $service->loaded())
 		{
-			Minion_CLI::write('Invalid Service ID');
+			Minion_CLI::write('Invalid Service');
 			return;
 		}
 

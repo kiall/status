@@ -12,17 +12,17 @@ class Minion_Task_Status_Service_Update extends Minion_Task
 	/**
 	 * An array of config options that this task can accept
 	 */
-	protected $_config = array('id', 'name', 'description', 'url');
+	protected $_config = array('name', 'description', 'url');
 
 	public function execute(array $config)
 	{
 		$service = ORM::factory('service', array(
-			'id' => $config['id'],
+			'name' => $config['name'],
 		));
 
 		if ( ! $service->loaded())
 		{
-			Minion_CLI::write('Invalid Service ID');
+			Minion_CLI::write('Invalid Service');
 			return;
 		}
 

@@ -12,24 +12,23 @@ class Minion_Task_Status_Event_Level_Update extends Minion_Task
 	/**
 	 * An array of config options that this task can accept
 	 */
-	protected $_config = array('id', 'name', 'image');
+	protected $_config = array('name', 'image');
 
 	public function execute(array $config)
 	{
 		$event_level = ORM::factory('event_level', array(
-			'id' => $config['id'],
+			'name' => $config['name'],
 		));
 
 		if ( ! $event_level->loaded())
 		{
-			Minion_CLI::write('Invalid Event Level ID');
+			Minion_CLI::write('Invalid Event Level');
 			return;
 		}
 
 		try
 		{
 			$event_level->values($config, array(
-				'name',
 				'image',
 			));
 
